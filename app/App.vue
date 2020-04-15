@@ -1,18 +1,33 @@
 <template>
   <div id="app">
-    hello this is app.vue
-    <div>
-      {{ message }}
+    <div class="appPageMsg">{{message}}
+      <div class="test">fwefawef</div>
     </div>
+    <home/>
+    <div id="greet"></div>
   </div>
 </template>
 <script>
+import home from './view/Home.vue'
 export default {
   name: 'app',
+  components: {
+    home: home
+  },
   data () {
     return {
-      message: 'zhang'
+      message: 'This massage from appPage'
     }
   }
 }
 </script>
+
+<style>
+  html, body{
+    padding: 0;
+    margin: 0;
+  }
+</style>
+<style lang='less'>
+  @import url('./static/css/app.less');
+</style>
