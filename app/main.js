@@ -5,7 +5,6 @@ import greeter from './Greeter'
 
 // 模板模式
 new Vue({
-  el: '#root',
   render: h => h(App)
 }).$mount('#app')
 document.querySelector('#greet').appendChild(greeter.a())

@@ -1,11 +1,13 @@
 const { VueLoaderPlugin } =  require('vue-loader')
 const webpack = require('webpack')
+const htmlWebpackPligin = require('html-webpack-plugin')
+const extractTextWebpackPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   devtool: 'eval-source-map', // Source Map , 'eval-source-map'模式安全性较低，只能在开发模式下使用
   entry: __dirname + '/app/main.js',
   output: {
     path: __dirname + '/public',
-    filename: 'bundle.js'
+    filename: 'bundle-[hash].js'
   },
   mode: 'development', // development, production
   devServer: {
@@ -69,8 +71,16 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    minimize: true
+  },
   plugins: [
     new VueLoaderPlugin(),
-    new webpack.BannerPlugin('版权所有，翻版必究')
+    new webpack.BannerPlugin('版权所有，翻版必究'),
+    new htmlWebpackPligin({
+      template: __dirname + '/app/index.tmpl.html'
+    }),
+    new extractTextWebpackPlugin('./static/css/app.less'),
+    new webpack.optimize.OccurrenceOrderPlugin()
   ]
 }
