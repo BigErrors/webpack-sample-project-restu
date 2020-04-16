@@ -1,4 +1,5 @@
 const { VueLoaderPlugin } =  require('vue-loader')
+const webpack = require('webpack')
 module.exports = {
   devtool: 'eval-source-map', // Source Map , 'eval-source-map'模式安全性较低，只能在开发模式下使用
   entry: __dirname + '/app/main.js',
@@ -47,9 +48,6 @@ module.exports = {
             loader: 'css-loader'
           },
           {loader: 'sass-loader'}
-          
-          
-          
         ], 
       },
       {
@@ -72,6 +70,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new webpack.BannerPlugin('版权所有，翻版必究')
   ]
 }

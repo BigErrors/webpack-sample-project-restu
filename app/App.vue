@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="appPageMsg">{{message}}
-      <div class="test">fwefawef</div>
     </div>
     <home/>
     <div id="greet"></div>
