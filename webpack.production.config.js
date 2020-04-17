@@ -10,7 +10,7 @@ module.exports = {
     path: __dirname + '/public',
     filename: 'bundle-[hash].js'
   },
-  mode: 'development', // development, production
+  mode: 'production', // development, production
   devServer: {
     contentBase: "./public", // 服务器加载页面所在目录
     historyApiFallback: true, // 单页开发时非常有用，所有的跳转指向index.html

@@ -3,7 +3,7 @@
     <div class="title">
       Hello, this content is from homePage
     </div>
-    <div class="btn"><button @click="print">打印测试</button></div>
+    <div class="btn"><button @click="print">打印测试:</button></div>
   </div>
 </template>
 
